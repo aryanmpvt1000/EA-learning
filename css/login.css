@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap');  
+    
+    *{
+        padding: 0%;
+        margin: 0px;
+         font-family: 'Baloo Paaji 2', cursive;
+    }
+        button{
+            font-family: 'Montserrat',sans-serif;
+            border-radius: 5px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: small
+            ;
+        }       
+               /* nav bar */
+.header{
+    border: 0px solid black;
+    width: 1202px;
+    background-color: #faf4f1;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: inline-block;
+    padding: 30px;
+}
+
+#main_logo{
+    display: inline;
+    top: 4px;
+    left: 40px;
+    position: absolute;
+    width: 12%;
+}
+.element{
+    /* list-style-type: none; */
+    margin: 10px;
+    /* padding: 3px ; */
+    width: 60%;
+    margin: auto;
+
+} 
+.element li {
+    display: inline;
+    padding: 24px 8px;
+}    
+.element li a {
+    font-weight: bold;
+    color: rgb(173, 119, 56);
+    text-decoration: none;
+}    
+.element li a:hover {
+        cursor: pointer;
+        color: rgb(83, 57, 27);
+        background-color: #ffbf52;
+        border-radius: 30px;
+        border: none;
+        padding: 8px;
+}    
+
+.register{
+    position: absolute;
+    width: 145px;
+    padding: 12px;
+    margin: -32px 1000px;
+    background-color: #ffbf52;
+    border-radius: 10px;
+    font-weight: bold;
+    left: 85px;
+    top: 53px;
+    border: 0px;
+}
+.register:hover{
+    background-color:#f1a31c;
+    color: black;
+}
+               /*end  navigation bar */
+
+ .login_form{
+    margin: auto;
+    width: 900px;
+    border: 1px solid black;
+    padding: 20px;
+    padding-bottom: 30px;
+    border-radius: 5px;
+ }
+ h1{
+    margin: auto;
+    width: 600px;
+    text-align: center;
+}
+
+#form{
+    margin: auto;
+    width: 400px;
+    text-align: center;
+}
+hr{
+    border-style: dotted none none;
+    border-color: #ffbf52;
+    border-width: 5px;
+    border-spacing: 5cm;
+    width: 3%;
+    margin: auto;
+}
+#hr1{
+    border-style: double;
+    width: 400px;
+    border-color: #ffbf52;
+    margin:auto;
+    border-width: 2px;
+    
+}
+a{
+    margin: auto;
+    width: 600px;
+    text-align: center;
+}
+input{
+    width: 200px;
+    padding: 8px;
+}
+p{
+    margin: auto;
+    width: 600px;
+    text-align: center;
+}
+#submit{
+    font-size: 4mm;
+    font-weight: bolder ;
+    word-spacing: 1mm;
+    padding: 8px;
+    width: 300px;
+    background-color: #ffbf52;
+    color: rgb(83, 57, 27);
+    border: 0px;
+    border-radius: 0%;
+}
+#submit:hover {
+    cursor: pointer;
+}

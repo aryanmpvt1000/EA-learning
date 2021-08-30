@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="/css/login.css">
+    <title>Login In Form</title>
+    
+    <script type = "text/javascript">
+function validate() {
+
+  if( document.myForm.Email.value == "") {
+     alert( "Please provide your Email!" );
+     document.myForm.Email.focus() ;
+     return false;
+    }           
+    if( document.myForm.Password.value == "" ) {
+        alert( "Please enter the Password!" );
+        document.myForm.Password.focus() ;
+     return false;
+  }
+  if( document.myForm.Email.value != "" )
+  {
+  var emailID = document.myForm.Email.value;
+  atpos = emailID.indexOf("@");
+  dotpos = emailID.lastIndexOf(".");
+           if (atpos < 1 || ( dotpos - atpos < 2 )) {
+     alert("Please enter correct email ID");
+     document.myForm.Email.focus() ;
+     return false;
+  }
+  }
+  
+  return true;
+ }
+
+</script> 
+
+</head>
+<body>
+
+          <!-- navigation bar -->
+
+
+   <header>
+    <a href="main.html" id="main_logo"> <video autoplay><source src="images/Logo-2.mp4" type="video/mp4" >Browser don't support</video> </a>
+    <div class="header">
+      <nav class="element">
+        <ul>
+          <li><a href="/main.html">Home <selected></a></li>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/courses/">Courses</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </nav>
+      
+        <a href="/signup.html"> <button class="register">Register now</button></a>
+    </div>
+  </header>
+  <!-- end navidation bar -->
+  <img src="/images/login.webp" width="100%" height="500px" id="photo"><br><br>
+
+  <h1>Login with your EAlearning Account</h1><br><hr id="hr1"><br>
+  <div class="login_form">
+    <form action = "" id="form" name = "myForm" onsubmit = "return(validate())" >
+        <label >Email</label><br>
+        <input type="email" name="Email" autocomplete="off"><br><br>
+        <label>Password</label><br>
+        <input type="password"name="Password"><br><br>
+        <input type="submit" id="submit" value="Login"><br>
+    </form><br>
+<p>Don't have an account?
+<a href="signup.html">Sign Up</a></p>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+ <!--footer-->
+ <footer>
+  <h4 align="center">A community that Helps You in learn and Grow.</h4>
+  <h6 align="center">Terms And conditon's are applied</h6>
+
+  <nav>
+    <span>Contact :</span>
+    <a href="www.facebook.com/">facebook</a> |
+    <a href="www.instagram.com/">instagram</a> |
+    <a href="www.gmail.com/">mail</a>
+  </nav>
+</footer>
+<!--footer-->
+
+</body>
+</html>

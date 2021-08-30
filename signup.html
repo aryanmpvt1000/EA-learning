@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" href="/css/signup.css">
+    <title>Sign Up Form</title>
+      
+    <!-- javascript -->
+
+    <script type = "text/javascript">
+function validate() {
+
+  if( document.myForm.Name.value == "" ) {
+     alert( "Please provide your name!" );
+     document.myForm.Name.focus() ;
+     return false;
+  }
+  if( document.myForm.Email.value == "" ) {
+     alert( "Please provide your Email!" );
+     document.myForm.Email.focus() ;
+     return false;
+  }
+  if( document.myForm.Contact.value == "" ) {
+     alert( "Please provide your contact no!" );
+     document.myForm.Contact.focus() ;
+     return false;
+  }
+  if( document.myForm.Password.value == "" ) {
+     alert( "Please provide your Password!" );
+     document.myForm.Password.focus() ;
+     return false;
+  }
+ /* if( document.myForm.Checkbox.value !== Checkbox.un ) {
+     alert( "Please check our Privacy Policy" );
+     document.myForm.Checkbox.focus() ;
+     return false;
+  }*/
+  if( document.myForm.Email.value != "" )
+  {
+  var emailID = document.myForm.Email.value;
+  atpos = emailID.indexOf("@");
+  dotpos = emailID.lastIndexOf(".");
+           if (atpos < 1 || ( dotpos - atpos < 2 )) {
+     alert("Please enter correct email ID");
+     //document.myForm.Email.focus() ;
+     return false;
+  }
+  }
+  
+  return true;
+ }
+
+</script>      
+
+
+</head>
+<body>
+
+      <!-- navigation bar -->
+
+
+   <header>
+      <a href="main.html" id="main_logo"> <video autoplay><source src="images/Logo-2.mp4" type="video/mp4" >Browser don't support</video> </a>
+      <div class="header">
+        <nav class="element">
+          <ul>
+            <li><a href="/main.html">Home <selected></a></li>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/courses/">Courses</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </nav>
+        
+          <a href="/signup.html"> <button class="register">Register now</button></a>
+      </div>
+    </header>
+    <!-- end navidation bar -->
+
+
+
+    <img src="/images/signup.jpg" width="100%" height="500px" id="photo">
+    <br>
+    <br>
+    <h1>Sign Up and Start Learning!</h1>
+    <br>
+    <hr id="hr1">
+    <br>
+    <div class="signup_form">
+    <form id="form" action = "action.php" name = "myForm" onsubmit = "return(validate());">
+        <label>Full Name</label><br>
+        <input type="text" name="Name"><br><br>
+        <label>Email</label><br>
+        <input type="email" name="Email" autocomplete="off"><br><br>
+        <label>Contact</label><br>
+        <input type="tel" name="Contact" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br><br>
+        <label>Password</label><br>
+        <input type="password" name="Password"><br><br>
+        <input type="checkbox" name="Checkbox" id="checkbox_input">
+        <label id="checkbox_lable">I'm in for emails with exciting discounts and personalized recommendations.</label><br><br>
+        <input type="submit" name="Submit" id="submit" value="Create Account"><br>
+    </form>
+    <br>
+    <p>By signing in you agree to our Terms of Use and Privacy Policy.</p>
+
+    <p>
+    Already have an account?
+    <a href="login.html">Log in</a></p>
+   </div>
+
+   <br>
+   <br>
+   <br>
+   <br>
+    <!--footer-->
+  <footer>
+   <h4 align="center">A community that Helps You in learn and Grow.</h4>
+   <h6 align="center">Terms And conditon's are applied</h6>
+
+   <nav>
+     <span>Contact :</span>
+     <a href="www.facebook.com/">facebook</a> |
+     <a href="www.instagram.com/">instagram</a> |
+     <a href="www.gmail.com/">mail</a>
+   </nav>
+ </footer>
+ <!--footer-->
+    
+</body>
+</html>
