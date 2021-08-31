@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap');  
+    
+    *{
+        padding: 0%;
+        margin: 0px;
+         font-family: 'Baloo Paaji 2', cursive;
+    }
+        button{
+            font-family: 'Montserrat',sans-serif;
+            border-radius: 5px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: small
+            ;
+        }
+        
+        hr {
+            border-style: dotted none none;
+            border-color: #ffbf52;
+            border-width: 5px;
+            border-spacing: 5cm;
+            width: 3%;
+            margin: auto;
+        }
+                                                         /* nav bar */
+        
+        
+        .header{
+            border: 0px solid black;
+            width: 1202px;
+            background-color: #faf4f1;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            display: inline-block;
+            padding: 30px;
+        }
+
+        #main_logo{
+            display: inline;
+            left: 40px;
+            position: absolute;
+            width: 12%;
+        }
+        .element{
+            /* list-style-type: none; */
+            margin: 10px;
+            /* padding: 3px ; */
+            width: 60%;
+            margin: auto;
+
+        } 
+.element li {
+    display: inline;
+    padding: 24px 8px;
+}    
+.element li a {
+    font-weight: bold;
+    color: rgb(173, 119, 56);
+    text-decoration: none;
+}    
+.element li a:hover {
+    cursor: pointer;
+    color: rgb(83, 57, 27);
+    
+}    
+
+.register{
+    position: absolute;
+    width: 145px;
+    padding: 12px;
+    margin: -32px 1000px;
+    background-color: #ffbf52;
+    border-radius: 10px;
+    font-weight: bold;
+    left: 85px;
+    top: 53px;
+    border: 0px;
+}
+.register:hover{
+    background-color:#f1a31c;
+    color: black;
+}
+/*end  navigation bar */
+
+                                                  /* heading  */
+
+#line {
+    border-style: solid;
+    width: 50px;
+    border-color: #ffbf52;
+    margin: auto ;
+    border-width: 2px;
+    border-radius: 1px;
+}     
+#heading{
+    font-size: 20mm;
+    background-color: #faf4f1;
+    text-align: center;
+    font-family: "Montserrat", "sans-serif";
+    padding: 40px;
+    font-weight: bold;
+}
+#diamond_logo{
+        display: inline-block;
+        position: absolute;
+        margin-top: -36px;
+
+    }
+
+                                                     /* Our vision */
+    #our_vision{
+        font-size: 10mm;
+     font-weight: 700;
+     color: white;
+    }
+
+      h5{
+        position: absolute;
+        top: 355px;
+        color: rgb(255, 255, 255);
+        right: 45%;
+      }
+      
+      #vision_para{
+     position: absolute;
+     top: 465px;
+     text-align: center;
+     }
+                                /* about */
+    #about{
+        display: flex;
+        justify-content: space-between;
+    }
+    #about_img{
+        position: relative;
+        float: right;
+    }
+    #about_description{
+        width: 40%;
+        font-size: 5mm;
+        margin-left: 30px;
+        position: relative;
+        top: 150px;
+        font-weight: bold;
+        text-align: center;
+    }

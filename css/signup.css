@@ -27,7 +27,6 @@
 
 #main_logo{
     display: inline;
-    top: 4px;
     left: 40px;
     position: absolute;
     width: 12%;
@@ -50,12 +49,9 @@
     text-decoration: none;
 }    
 .element li a:hover {
-        cursor: pointer;
-        color: rgb(83, 57, 27);
-        background-color: #ffbf52;
-        border-radius: 30px;
-        border: none;
-        padding: 8px;
+    cursor: pointer;
+    color: rgb(83, 57, 27);
+
 }    
 
 .register{
@@ -145,3 +141,10 @@ width: auto;
     background-color: rgb(51, 71, 158);
 
 }
+            /* footer */
+            .social{
+    
+                position: absolute;
+                right: 450px;
+            }
+            

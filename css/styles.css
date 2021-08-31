@@ -27,10 +27,14 @@ hr {
  border-color: #ffbf52;
  margin-left:290px ;
  border-width: 2px;
- 
+ }
 
+ #diamond_logo{
+    display: inline-block;
+    position: absolute;
+    margin-top: -36px;
+    right: 330px;
 }
-
 h2{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: xx-large;
@@ -173,6 +177,7 @@ padding-right: 40px;
 
 
                     /* we belive */
+                
 #about_photo{
     margin-left: 20px;
     margin-top: 150px;
@@ -186,9 +191,16 @@ padding-right: 40px;
     width: 50%;
     margin-right: 30px;
     border-radius: 20px;
-   
-         /* courses */
 }
+         /* courses */
+
+ #diamond_logo_course{
+            display: inline-block;
+            position: absolute;
+            margin-top: -16px;
+            right: 285px;
+         }
+
 .web, .py{
 border: 0px solid black;
 padding: 23px;
@@ -294,6 +306,10 @@ top: 2550px;
 }
 
 
-
-
+            /* footer */
+.social{
+    
+    position: absolute;
+    right: 450px;
+}
 
