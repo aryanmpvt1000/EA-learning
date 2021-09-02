@@ -120,6 +120,7 @@
         top: 355px;
         color: rgb(255, 255, 255);
         right: 45%;
+        margin: auto;
       }
       
       #vision_para{
@@ -145,3 +146,43 @@
         font-weight: bold;
         text-align: center;
     }
+
+                                            /* we believe  */
+
+   #we_believe{
+       background-color: #f1a31c;
+       border-radius: 20px;
+       width: 80vw;
+       margin: auto;
+       height: 180vh;
+   }       
+   #we_believe_content{
+       text-align: center;
+       width: 400px;
+        margin: auto;
+        font-size: 1.50rem;
+         font-weight: 400;
+         line-height: 2.25rem;
+        letter-spacing: -0.1px;
+
+   }                                  
+   h3{
+       font-weight: bolder;
+       font-size: 9mm;
+   }
+
+                                             /* our team  */
+
+ #team_members{
+     display: flex;
+     flex-direction: row;
+     justify-content: space-evenly;
+     text-align: center;
+     flex-wrap: wrap;
+     
+ }           
+ .profile_pic{
+     border-radius: 100%;
+     max-width: 200px;
+     max-width: 200px;
+ }                                 
