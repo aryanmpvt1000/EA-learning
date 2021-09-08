@@ -186,3 +186,12 @@
      max-width: 200px;
      max-width: 200px;
  }                                 
+
+
+
+                                                     /* footer */
+.social{
+    
+    position: absolute;
+    right: 450px;
+}

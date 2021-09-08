@@ -70,8 +70,14 @@
     background-color:#f1a31c;
     color: black;
 }
-               /*end  navigation bar */
+                   /* signup */
 
+#diamond_logo{
+                    display: inline-block;
+                    position: absolute;
+                    margin-top: -33px;
+                    right: 622px;
+                }
 .signup_form{
     margin: auto;
     width: 900px;
@@ -148,3 +154,9 @@ width: auto;
                 right: 450px;
             }
             
+                              /* footer */
+.social{
+    
+    position: absolute;
+    right: 450px;
+}
