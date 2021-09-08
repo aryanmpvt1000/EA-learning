@@ -2,6 +2,7 @@
 
 *{
     font-family: 'Baloo Paaji 2', cursive;
+    
 }
 
   @media (min-width: 768px) {
@@ -13,18 +14,21 @@
   .card{
       height: 464px;
   }
+  .container{
+      width: 100%;
+  }
 
 
                                                   /* header  */
 
-  .header{
-      border: 0px solid black;
+      .header{
+        border: 0px solid black;
         width: 100%;
         background-color: #faf4f1;
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
         display: inline-block;
-        padding: 30px;
+        padding: 25px;
     }
     
     #main_logo{
@@ -38,16 +42,20 @@
         margin: 10px;
         width: 60%;
         margin: auto;
+        top: 9px;
+          position: relative;
+          right: 16px;
     
     } 
     .element li {
         display: inline;
-        padding: 24px 5px;
+        padding: 2px;
     }    
     .element li a {
-        font-weight: bold;
+        font-size: 18px;
         color: rgb(173, 119, 56);
         text-decoration: none;
+        font-weight: bolder;
         padding: 5px;
     }    
     .element li a:hover {
@@ -58,13 +66,15 @@
     #login{
         position: absolute;
         width: 100px;
-        padding: 13px;
+        padding: 9px;
         margin: -32px 945px;
         border: 1px solid black;
         background-color: #faf4f1;
         border-radius: 10px;
         font-weight: bold;
         top: 57px;
+        text-transform: uppercase;
+    font-weight: bold;
     }
     #login:hover{
         background-color:#ebe3e0 ;
@@ -73,7 +83,7 @@
     #register{
         position: absolute;
         width: 145px;
-        padding: 13px;
+        padding: 9px;
         margin: -32px 1000px;
         border: 1px solid #ffbf52;
         background-color: #ffbf52;
@@ -81,11 +91,34 @@
         font-weight: bold;
         left: 85px;
         top: 58px;
+    text-transform: uppercase;
+    font-weight: bold;
     }
     #register:hover{
         background-color:#f1a31c ;
         color: black;
     }
+
+                            /* course content  */
+    #courses_content{
+        position: absolute;
+        display: inline-block;
+        margin: 100px 255px;
+        width: 60%;
+        
+    }
+    #courses_text{
+        font-size:5mm;
+        color: white;
+        margin: auto;
+        width: 100%;
+        font-weight: 900;
+        text-shadow: #ebe3e0 ;
+    }
+    .courses_img{
+        opacity: 0.9;
+    }
+
 
                                        /* courses   */
     
