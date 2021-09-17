@@ -21,7 +21,6 @@
 
 .header{
     border: 0px solid black;
-    width: 1202px;
     background-color: #faf4f1;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -62,7 +61,7 @@
     position: absolute;
     width: 145px;
     padding: 12px;
-    margin: -32px 1000px;
+    margin: -32px 980px;
     background-color: #ffbf52;
     border-radius: 10px;
     font-weight: bold;
@@ -74,6 +73,7 @@
     background-color:#f1a31c;
     color: black;
 }
+
                /*end  navigation bar */
 
  #diamond_logo{
@@ -132,30 +132,25 @@ p{
     width: 600px;
     text-align: center;
 }
-#submit{
+.submit{
     font-size: 4mm;
     font-weight: bolder ;
     word-spacing: 1mm;
     padding: 8px;
     width: 300px;
-    background-color: #ffbf52;
+    background-color: #f5c46f;
     color: rgb(83, 57, 27);
     border: 0px;
     border-radius: 0%;
 }
-#submit:hover {
+.submit:hover {
     cursor: pointer;
 }
             /* footer */
-            .social{
-    
-                position: absolute;
-                right: 450px;
-            }
-            
-                             /* footer */
 .social{
     
-    position: absolute;
-    right: 450px;
-}
+      position: absolute;
+     right: 450px;
+     }
+            
+                            
