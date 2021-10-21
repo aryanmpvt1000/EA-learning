@@ -142,7 +142,7 @@ left: 405px;
     right: 450px;
 }
 .container{
-    position: relative;
+    position: absolute;
     left: 10px;
 }
 

@@ -17,7 +17,7 @@
                /* nav bar */
 .header{
     border: 0px solid black;
-    width: 1202px;
+    width: 100%px;
     background-color: #faf4f1;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;

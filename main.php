@@ -1,3 +1,16 @@
+
+<?php
+session_start();
+$reg_button = true;
+
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+  $reg_button=false; 
+  header("location: login.php");
+    exit;
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +21,8 @@
 
 
   <title>EAlearning</title>
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" type="text/css" href="http://localhost/E-learning%20project/css/styles.css">
+  <link href="/style.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
   <link rel="icon" href="/favicon.ico">
 
   <script type="text/javascript">
@@ -16,12 +30,12 @@
 
       if (document.myForm.name.value == "") {
         alert("Please provide your Name");
-        document.myForm.name.focus();
+        document.myForm.name.focus().trim();
         return false;
       }
       if (document.myForm.email.value == "") {
         alert("Please provide your Email!");
-        document.myForm.email.focus();
+        document.myForm.email.focus().trim();
         return false;
       }
       if (document.myForm.Email.value != "") {
@@ -30,13 +44,16 @@
         dotpos = emailID.lastIndexOf(".");
         if (atpos < 1 || (dotpos - atpos < 2)) {
           alert("Please enter correct email ID");
-          document.myForm.Email.focus();
+          document.myForm.Email.focus().trim();
           return false;
         }
       }
 
       return true;
     }
+
+ 
+
 
   </script>
 
@@ -47,23 +64,63 @@
   <!-- START NAVIGATION-->
 
   <header>
-    <a href="main.html" id="main_logo"> <video autoplay>
+    <a href="main.php" id="main_logo"> <video autoplay>
         <source src="video/Logo-2.mp4" type="video/mp4">Browser don't support
       </video> </a>
     <div class="header">
       <nav class="element">
         <ul>
           <li><a href="#">Home <selected></a></li>
-          <li><a href="/about_us.html">About Us</a></li>
-          <li><a href="/courses.html">Courses</a></li>
-          <li><a href="/blog/">Blog</a></li>
+          <li><a href="about_us.php">About Us</a></li>
+          <li><a href="courses.php">Courses</a></li>
+          <!-- <li><a href="/blog/">Blog</a></li> -->
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <a href="/signup.html"> <button id="register">Register now</button></a>
-      <a href="/login.html"> <button id="login">login</button> </a>
-    </div>
-  </header>
+      <?php
+      if ($reg_button=false)
+      echo'
+      <a href="signup.php"> <button id="register">Register now</button></a>
+      <a href="login.php"> <button id="login">login</button> </a>'
+      ?>
+      <div id="profile">
+        <!-- <ul>
+          <li> -->
+      <i class="btn btn-dark ">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class=" bi bi-person" viewBox="0 0 16 16">
+        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class=" bi bi-chevron-down" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+    </svg>
+  </i>
+  <!-- </li></ul> -->
+  <p id="profile_name"> <?php echo $_SESSION['email'] ?>
+    </p>
+  </div>
+      </div>
+      </header>                   
+                                        <!-- dropdown  -->
+     <!-- <div class="right">
+     <div class="wrapper">
+    <div class="navbar">
+      
+      <ul>
+      <li>
+
+<div class="dropdown">
+    <ul>
+      <li><a href="#"><i class="fas fa-user"></i> Profile-<?php echo $_SESSION['email'] ?></a></li>
+      <li><a href="#"><i class="fas fa-sliders-h"></i> Settings</a></li>
+      <li><a href="#"><i class="fas fa-sign-out-alt"></i> Signout</a></li>
+  </ul>
+</div>
+</li>
+          </ul>
+    </div>  
+  </div>
+  </div> -->
+  
   <!-- END NAVIGATION-->
   <br>
   <br>
@@ -82,7 +139,7 @@
         be
         eligible to receive a shareable electronic Course Certificate for a small fee.</p>
       <br>
-      <a href="/signup.html"><button>Learn Now</button></a>
+      <a href="signup.php"><button>Learn Now</button></a>
     </div>
   </section>
 
@@ -95,13 +152,13 @@
 
   <!-- about us-->
   <section>
-    <img src="/images/about_us.jpg" alt="error" width="550px" hight="600px" id="about_photo">
+    <img src="http://localhost/E-learning%20project/images/about_us.jpg" alt="error" width="550px" hight="600px" id="about_photo">
     <u>
       <h2 align="center" id="heading1">About us</h2>
     </u><br>
     <div id="we_belive">
       <div id="diamond_logo">
-        <img src="/images/yellow-diamond-shape.svg" alt="" width="24" height="24">
+        <img src="http://localhost/E-learning%20project/images/yellow-diamond-shape.svg" alt="" width="24" height="24">
       </div>
       <h3 align="center">We Believe</h3><br>
       <p id="about">
@@ -143,7 +200,7 @@
 
   <div class="courses">
     <div id="diamond_logo">
-      <img src="/images/yellow-diamond-shape.svg" id="diamond_logo_course" alt="" width="24" height="24">
+      <img src="http://localhost/E-learning%20project/images/yellow-diamond-shape.svg" id="diamond_logo_course" alt="" width="24" height="24">
     </div>
 
     <h2 align="center" id="heading2">Popular courses</h2>
@@ -153,7 +210,7 @@
       <section id="webdevelopment">
         <div class="web" style="flex-basis: 300px;">
           <div id="htmlphoto">
-            <img src="images/html.png" id="web_img">
+            <img src="http://localhost/E-learning%20project/images/html.png" id="web_img">
           </div>
           <h4>Introduction to web development</h4>
           <p> Lean the Fundamentals of HTML,CSS,JavaScript to Create Fully Customized,
@@ -166,7 +223,7 @@
       <section id="Python">
         <div class="py">
           <div id="py_photo">
-            <img src="images/python.png">
+            <img src="http://localhost/E-learning%20project/images/python.png">
           </div>
           <div id="py_c">
             <h4>Programming with Python</h4>
@@ -180,7 +237,7 @@
       <section id="java">
         <div class="py">
           <div id="java_photo">
-            <img src="images/java.jpg" width="325px" height="150px">
+            <img src="http://localhost/E-learning%20project/images/java1.png" width="325px" height="150px">
           </div>
           <div id="java_c">
             <h4>Programming in Java</h4>
@@ -192,7 +249,7 @@
       <!-- More courses button  -->
     </div>
     <div id=more_courses>
-      <button> More courses </button>
+      <a href="courses.php"><button > More courses </button></a>
     </div>
   </div>
   <!--End Courses-->
@@ -263,6 +320,30 @@
 
   </div>
 
+<script type="text/javascript">
+
+// function profiledrop() {
+//         (document.getElementById("dropdown_menu").classList.toggle("show");
+//       }
+
+//       window.onclick = function(event) {
+//   if (!event.target.matches('.profile_btn')) {
+//     var dropdowns = document.getElementsByClassName("dropdown_content");
+//     var i;
+//     for (i = 0; i < dropdowns.length; i++) {
+//       var openDropdown = dropdowns[i];
+//       if (openDropdown.classList.contains('show')) {
+//         openDropdown.classList.remove('show');
+//       }
+//     }
+//   }
+// } 
+
+document.querySelector("#profile ul li").addEventListener("click", function () {
+  this.classList.toggle("active");
+});
+
+</script>
 
 </body>
 

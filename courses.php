@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="/css/courses.css">
+    <link rel="stylesheet" href="http://localhost/E-learning%20project/css/courses.css">
     <link rel="icon" href="favicon.ico">
     <!-- Bootstrap core CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -10,35 +10,35 @@
   <body>
                                        <!-- header -->
   <header>
-   <a href="main.html" id="main_logo"> <video autoplay>
+   <a href="main.php" id="main_logo"> <video autoplay>
        <source src="video/Logo-2.mp4" type="video/mp4">Browser don't support
      </video> </a>
    <div class="header">
      <nav class="element">
        <ul>
-         <li><a href="/main.html">Home </a></li>
-         <li><a href="/about_us.html">About Us</a></li>
-         <li><a href="#">Courses</a></li>
-         <li><a href="/blog/">Blog</a></li>
-         <li><a href="/main.html#contact">Contact</a></li>
+         <li><a href="main.php">Home </a></li>
+         <li><a href="about_us.php">About Us</a></li>
+         <li><a href="courses.php">Courses</a></li>
+         <!-- <li><a href="/blog/">Blog</a></li> -->
+         <li><a href="main.php#contact">Contact</a></li>
        </ul>
      </nav>
-     <a href="/signup.html"> <button id="register">Register now</button></a>
-     <a href="/login.html"> <button id="login">login</button> </a>
+     <a href="signup.php"> <button id="register">Register now</button></a>
+     <a href="login.php"> <button id="login">login</button> </a>
    </div>
  </header>
       
-      <div class="top"></div>
+      <p class="top"></p>
                                    <!-- courses content  -->
                                    
-        <img src="/images/courses.jpg" alt="" height="400px" width="100%" class="courses_img">
+        <img src="http://localhost/E-learning%20project/images/courses.jpg" alt="" height="400px" width="100%" class="courses_img">
         <section class="text-center container" id="courses_content">
           <div >
             <div id=courses_text>
               <h1 class="fw-light">All available courses</h1>
               <p >Discover a range of free learning content designed to help grow your business or jumpstart your career. You can learn by selecting individual modules, or dive right in and take an entire course end-to-end.</p>
               <p>
-                <a href="/signup.html" class="btn btn-primary my-2">Register Now</a>
+                <a href="signup.php" class="btn btn-primary my-2">Register Now</a>
               </p>
             </div>
           </div>
@@ -54,7 +54,7 @@
               <!-- html  -->
               <div class="col">
                 <div class="card shadow-sm">
-                  <img src="/images/html.png" alt="" id="html"></img>
+                  <img src="http://localhost/E-learning%20project/images/html.png" alt="" id="html"></img>
                   <div class="card-body">
                     <h4>Introduction to web development</h4>
                     <p class="card-text"> Lean the Fundamentals of HTML,CSS,JavaScript to Create Fully Customized,
@@ -70,7 +70,7 @@
                 <!-- python  -->
                 <div class="col">
                   <div class="card shadow-sm">
-            <img src="/images/python.png" alt="" id="python"></img>
+            <img src="http://localhost/E-learning%20project/images/python.png" alt="" id="python"></img>
 
             <div class="card-body">
               <h4>Programming with Python</h4>
@@ -87,7 +87,7 @@
                                           <!-- java  -->
         <div class="col">
           <div class="card shadow-sm">
-            <img src="/images/java1.png" alt="" id="java"></img>
+            <img src="http://localhost/E-learning%20project/images/java1.png" alt="" id="java"></img>
 
             <div class="card-body">
               <h4>Programming in Java</h4>
@@ -102,7 +102,7 @@
                                       <!-- react  -->
         <div class="col">
           <div class="card shadow-sm">
-            <img src="/images/react.png" alt=""></img>
+            <img src="http://localhost/E-learning%20project/images/react.png" alt=""></img>
             <div class="card-body">
                 <h4>Front-End Development in React Framework</h4>
                 <p class="card-text"> React Native combines the best parts of native development with React, a best-in-class JavaScript library for building user interfaces.
@@ -117,7 +117,7 @@
                                          <!-- angular -->
         <div class="col">
           <div class="card shadow-sm">
-            <img src="/images/angular.png" alt=""></img>
+            <img src="http://localhost/E-learning%20project/images/angular.png" alt=""></img>
             <div class="card-body">
                 <h4>Angular Framework</h4>
                 <p class="card-text"> Angular is an application design framework and development platform for creating efficient and sophisticated single-page apps.</p>
@@ -131,7 +131,7 @@
                                               <!-- c++ -->
         <div class="col">
           <div class="card shadow-sm">
-            <img src="/images/c++.png" alt=""></img>
+            <img src="http://localhost/E-learning%20project/images/c++.png" alt=""></img>
             <div class="card-body">
                 <h4>C++ pgrograming language</h4>
                 <p class="card-text"> C++ is a general-purpose programming language that was developed as an enhancement of the C language to include object-oriented paradigm. It is an imperative and a compiled language. </p>
@@ -145,7 +145,7 @@
                                              <!-- swift -->
         <div class="col">
           <div class="card shadow-sm">
-            <img src="/images/swift.jpg" alt=""></img>
+            <img src="http://localhost/E-learning%20project/images/swift.jpg" alt=""></img>
             <div class="card-body">
                 <h4>IOS application development with Swift</h4>
                 <p class="card-text"> Swift is a general-purpose, multi-paradigm, compiled programming language developed by Apple Inc. and the open-source community. </p>
@@ -159,7 +159,7 @@
                                            <!-- git github -->
         <div class="col">
           <div class="card shadow-sm">
-            <img src="/images/github.jpg" alt=""></img>
+            <img src="http://localhost/E-learning%20project/images/github.jpg" alt=""></img>
             <div class="card-body">
                 <h4>Introduction to Git & Github</h4>
                 <p class="card-text"> GitHub, Inc. is a provider of Internet hosting for software development and version control using Git. It offers the distributed version control and source code management functionality of Git, plus its own features.</p>
@@ -180,10 +180,10 @@
 <br>
 <br>
 
-<div class="container">
-    <p class="float-end mb-2" >
-    <a href="#top">Back to top</a></p>
-  </div>
+<!-- <div class="container"> -->
+    <!-- <p class="float-end mb-2" > -->
+    <a href="#top" class="container">Back to top</a></p>
+  <!-- </div> -->
 
                                           <!--footer-->
               <footer >

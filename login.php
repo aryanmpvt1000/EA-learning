@@ -12,19 +12,27 @@
   //  insert data in table
  
 
-  $sql="SELECT email, password FROM signup WHERE email='$email' AND password='$password'";
+  $sql="SELECT email , password FROM signup WHERE email='$email' AND password='$password'";
   
   $result =mysqli_query ($conn , $sql);
   $num= mysqli_num_rows ($result);
 
   if ($num==1) {
     $login=true;
-  }
+    //session start
+    session_start();
+                $_SESSION['loggedin'] = true;
+                $_SESSION['email'] = $email;
+                header("location: main.php");
+            } 
+            else{
+                $showError = "Invalid Credentials";
+            }
+        }
 else{
-    $showError s= "Invalid credentials";
-
+    echo '';
    }
-  }
+        
    ?>
 
 
@@ -34,7 +42,7 @@ else{
 <head>
 
   <title>Login in</title>
-  <link rel="stylesheet" href="http://localhost/E-learning%20project/login.css">
+  <link rel="stylesheet" href="css/login.css" type="text/css">
   <link rel="icon" href="favicon.ico" type="image/ico">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
@@ -76,19 +84,21 @@ function validate() {
 
 
    <header>
-    <a href="main.html" id="main_logo"> <video autoplay><source src="video/Logo-2.mp4" type="video/mp4" >Browser don't support</video> </a>
-    <div class="header">
+    <a href="main.php" id="main_logo"> <video autoplay><source src="video/Logo-2.mp4" type="video/mp4" >Browser don't support</video> </a>
+    <div class="header" style="width=100%;">
       <nav class="element">
         <ul>
-          <li><a href="/main.html">Home <selected></a></li>
-          <li><a href="/about_us.html">About Us</a></li>
-          <li><a href="/courses.html">Courses</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/main.html#contact">Contact</a></li>
+          <li><a href="main.php">Home <selected></a></li>
+          <li><a href="about_us.php">About Us</a></li>
+          <li><a href="courses.php">Courses</a></li>
+          <!-- <li><a href="/blog/">Blog</a></li> -->
+          <li><a href="main.php#contact">Contact</a></li>
         </ul>
+        
       </nav>
       
-        <a href="/signup.php"> <button class="register">Register now</button></a>
+        <a href="signup.php"> <button class="register">Register now</button></a>
+        
     </div>
   </header>
 
@@ -106,28 +116,29 @@ function validate() {
 
 <?php
   if($login)
-  {echo'<div class="alert alert-success alert-dismissible fade show" role="alert">
+  {
+    echo'<div class="alert alert-success alert-dismissible fade show" role="alert">
  <strong>Success!</strong> You are successfuly logged in.
  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div><br>' ;
 }
 if($showError)
-   {echo'<div class="alert alert-danger alert-dismissible fade show" role="alert">
+   {
+     echo'<div class="alert alert-danger alert-dismissible fade show" role="alert">
   <strong>ERROR!</strong> '.$showError.'
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div> ';
-
- }
+}
 ?>
     
 
 
-    <form action = "login.php" method="POST" id="form" name = "myForm" onsubmit = "return(validate())" >
+    <form action = "login.php" method="post" id="form" name = "myForm" onsubmit = "return(validate())" >
         <label >Email</label><br>
         <input type="email" name="Email" autocomplete="off"><br><br>
         <label>Password</label><br>
         <input type="password"name="Password"><br><br>
-        <input type="submit" id="Submit" name="submit" value="Login"><br>
+        <input type="submit" class="Submit" name="submit" value="Login"><br>
     </form><br>
 <p>Don't have an account?
 <a href="signup.php">Sign Up</a></p>

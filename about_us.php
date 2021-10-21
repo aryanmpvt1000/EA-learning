@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>About Us</title>
-    <link rel="stylesheet" href="/css/about_us.css">
+    <link rel="stylesheet" href="http://localhost/E-learning%20project/css/about_us.css">
     <link rel="icon" href="favicon.ico" type="image/ico">
 </head>
 <body>
@@ -15,19 +15,19 @@
 
 
    <header>
-    <a href="main.html" id="main_logo"> <video autoplay><source src="video/Logo-2.mp4" type="video/mp4" >Browser don't support</video> </a>
+    <a href="main.php" id="main_logo"> <video autoplay><source src="video/Logo-2.mp4" type="video/mp4" >Browser don't support</video> </a>
     <div class="header">
       <nav class="element">
         <ul>
-          <li><a href="/main.html">Home <selected></a></li>
+          <li><a href="main.php">Home <selected></a></li>
           <li><a href="#">About Us</a></li>
-          <li><a href="/courses.html">Courses</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/main.html#contact">Contact</a></li>
+          <li><a href="courses.php">Courses</a></li>
+          <!-- <li><a href="/blog/">Blog</a></li> -->
+          <li><a href="main.php#contact">Contact</a></li>
         </ul>
       </nav>
       
-        <a href="/signup.html"> <button class="register">Register now</button></a>
+        <a href="signup.php"> <button class="register">Register now</button></a>
     </div>
   </header>
                      
@@ -37,7 +37,7 @@
   <div id="heading"><hr id="line">
       About us<br>
       <div id="diamond_logo">
-      <img src="/images/yellow-diamond-shape.svg" alt=""width="24" height="24">
+      <img src="http://localhost/E-learning%20project/images/yellow-diamond-shape.svg" alt=""width="24" height="24">
     </div>
     </div>
 <!-- <br> -->
@@ -93,7 +93,7 @@
     <h1 align="center">Our Team</h1><br>
 <div id="team_members">
   <div id="aryan">
-    <img class="profile_pic" src="/images/aryan.jpg" alt="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
+    <img class="profile_pic" src="http://localhost/E-learning%20project/images/aryan.jpg" alt="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
     <br>
     <strong>Aryan Mittal</strong><br>
     <span>Ceo, web developer</span><br>
@@ -101,7 +101,7 @@
   </div>
   <br>
   <div id="ekansh">
-    <img class="profile_pic" src="/images/ekansh.jpg" alt="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
+    <img class="profile_pic" src="http://localhost/E-learning%20project/images/ekansh.jpg" alt="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
     <br>
     <strong>Ekansh Bhatia</strong><br>
     <span>Founder, chairman, web developer</span>

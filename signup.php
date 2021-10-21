@@ -1,8 +1,39 @@
+<?php
+          $signup = false;
+          $showError= false;
+         //connect database
+        if ($_SERVER['REQUEST_METHOD']=='POST'){
+          include 'php/db_connect.php';
+         $name=$_POST['Name'];
+         $email=$_POST['Email'];
+         $contact=$_POST['Contact'];
+         $password=$_POST['Password'];
+
+
+
+  //  insert data in table
+ 
+  
+  $sql="INSERT INTO `signup` (`name`, `email`, `contact`, `password`) VALUES ('$name', '$email', $contact, '$password')";
+  
+  $result =mysqli_query ($conn , $sql);
+
+  if ($result) {
+   $signup =true; 
+}
+else{
+    $showError= "Please enter valid information";
+
+   } 
+  }
+   ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <title>Sign Up</title>
-   <link rel="stylesheet" href="signup.css">
+   <link rel="stylesheet" href="http://localhost/E-learning%20project/css/signup.css">
    <link rel="icon" href="favicon.ico" type="image/ico">
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
       
@@ -61,19 +92,19 @@ function validate() {
 
 
    <header>
-      <a href="main.html" id="main_logo"> <video autoplay><source src="video/Logo-2.mp4" type="video/mp4" >Browser don't support</video> </a>
+      <a href="main.php" id="main_logo"> <video autoplay><source src="video/Logo-2.mp4" type="video/mp4" >Browser don't support</video> </a>
       <div class="header">
         <nav class="element">
           <ul>
-            <li><a href="/main.html">Home <selected></a></li>
-            <li><a href="/about_us.html">About Us</a></li>
-            <li><a href="/courses.html">Courses</a></li>
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/main.html#contact">Contact</a></li>
+            <li><a href="main.php">Home <selected></a></li>
+            <li><a href="about_us.php">About Us</a></li>
+            <li><a href="courses.php">Courses</a></li>
+            <!-- <li><a href="/blog/">Blog</a></li> -->
+            <li><a href="main.php#contact">Contact</a></li>
           </ul>
         </nav>
         
-          <a href="#"> <button class="register">Register now</button></a>
+          <a href="login.php"> <button class="register">Login</button></a>
       </div>
     </header>
 
@@ -94,61 +125,28 @@ function validate() {
        </div>
                           
                                                     <!-- php  -->
-
-       <?php
-        if ($_SERVER['REQUEST_METHOD']=='POST'){
-         $name=$_POST['Name'];
-         $email=$_POST['Email'];
-         $contact=$_POST['Contact'];
-         $password=$_POST['Password'];
-
-//connect database 
-
-$servername = "localhost";
-$username = "root";
-$pass = "";
-$database ="ea learning";
-
-// Create connection
-$conn = mysqli_connect($servername, $username, $pass, $database);
-
-// Check connection
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-}
-echo "";
-
-
-  //  insert data in table
- 
-  
-  $sql="INSERT INTO `signup` (`name`, `email`, `contact`, `password`) VALUES ('$name', '$email', $contact, '$password')";
-  
-  $result =mysqli_query ($conn , $sql);
-
-  if ($result) {
+<?php
+  if ($signup) {
    echo'<div class="alert alert-success alert-dismissible fade show" role="alert">
    <strong>Success!</strong> You are successfuly registerd.
    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
  </div><br>' ;
 }
-else{
+if($showError){
     echo'<div class="alert alert-danger alert-dismissible fade show" role="alert">
-    <strong>ERROR!</strong> Please enter valid information.
+    <strong>ERROR!</strong> '.$showError.'
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div> ' . mysqli_error($conn);
-
-   } }
-   ?>
-
-
+  </div> ';
+   } 
+    ?>
+                                         <!-- form  -->
     <form id="form" action = "/E-learning project/signup.php" method="post" name = "myForm" onsubmit = "return(validate());">
         <label>Full Name</label><br>
         <input type="text" name="Name"><br><br>
         <label>Email</label><br>
         <input type="email" name="Email" autocomplete="off"><br><br>
         <label>Contact</label><br>
-        <input type="tel" name="Contact" placeholder="123-456-7890"><br><br>
+        <input type="tel" name="Contact" pattern="[0-9]{10}"><br><br>
         <label>Password</label><br>
         <input type="password" name="Password"><br><br>
         <input type="checkbox" name="Checkbox" id="checkbox_input">
@@ -160,7 +158,7 @@ else{
 
     <p>
     Already have an account?
-    <a href="login.html">Log in</a></p>
+    <a href="login.php">Log in</a></p>
    </div>
 
    <br>

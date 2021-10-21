@@ -20,10 +20,9 @@ hr {
     border-width: 5px;
     border-spacing: 5cm;
     width: 3%;
-    
 }
 #info_hr {
-border-style: solid;
+    border-style: solid;
  width: 50px;
  border-color: #ffbf52;
  margin-left:290px ;
@@ -45,10 +44,11 @@ h2{
 
 button{
     padding:10px;
+    width: 100px;
     border: none;
     background-color: #ffbf52;
     font-family: 'Montserrat',sans-serif;
-    border-radius: 10px;
+    border-radius: 5px;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: bold;
@@ -112,6 +112,7 @@ button:hover{
 #login{
     position: absolute;
     width: 100px;
+    padding: 13px;
     margin: -32px 845px;
     border: 1px solid black;
     background-color: #faf4f1;
@@ -126,6 +127,7 @@ button:hover{
 #register{
     position: absolute;
     width: 145px;
+    padding: 13px;
     margin: -32px 900px;
     border: 1px solid #ffbf52;
     background-color: #ffbf52;
@@ -140,87 +142,9 @@ button:hover{
 }
 #profile{
     position: absolute;
-    right: 42px;
-    top: 45px;
+right: 75px;
+top: 35px;
 }
-#profile_name{
-    position: absolute;
-    right: -18px;
-    top: -30px;
-    font-size: 4mm;
-    
-}
-                                        /* dropdown   */
-
-                /* *********************adjust dropdown style and position************ */
-                
-.wrapper{ 
-    position: absolute;
-    top: 40%;
-    right: -60px;
-    transform: translate(-50%,-50%);
-    z-index: 10;
-  }
-  
-  .wrapper .navbar{
-    width: 140px;
-    background: #f1a31c;
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 25px;
-    border-radius: 5px;
-  }
-   
-   .wrapper .navbar ul li a{
-     color: #000200;
-   }
-                  
-   .wrapper .navbar 
-   .wrapper .navbar .profile ul li a{
-    display: flex;
-    align-items: center;
-    height: 120px;
-  }
-  .wrapper .navbar ,
-.wrapper .navbar {
-  margin: 0 20px;
-}
-.wrapper .navbar .profile a{
-    text-align: right;
-  }
-  .wrapper .navbar {
-    font-size: 10px;
-  }
-  .wrapper .navbar .profile ul li{
-    position: relative;
-  }
-  .wrapper .navbar .profile ul li .dropdown{
-    position: absolute;
-    /* top: 65px; */
-    /* right: 0; */
-    background: #ffbf52;
-    padding: 10px 25px;
-    border-radius: 5px;
-    display: none;
-  }
-  .wrapper .navbar .profile ul li .dropdown .fas{
-    /* margin-right: 10px; */
-  }
-  .wrapper .navbar .profile ul li .dropdown:before{
-    content: "";
-    position: absolute;
-    /* top: -20px; */
-    /* left: 50%; */
-    transform: translateX(-50%);
-    border: 10px solid;
-    border-color: transparent transparent #fff transparent;
-  }
-  .wrapper .navbar .profile ul li.active .dropdown{
-    display: block;
-  }
-
-
-
                 /* main info */
 
 #main_img{
