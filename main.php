@@ -21,9 +21,8 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 
 
   <title>EAlearning</title>
-  <link rel="stylesheet" type="text/css" href="css/styles.css?version=51">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="icon" href="/favicon.ico">
 
   <script type="text/javascript">
     function validate() {
@@ -52,7 +51,9 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
       return true;
     }
 
- 
+    function myFunction() {
+        (document.getElementById('dropdown').classList.toggle('show'));
+      }
 
 
   </script>
@@ -83,9 +84,12 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
       <a href="signup.php"> <button id="register">Register now</button></a>
       <a href="login.php"> <button id="login">login</button> </a>'
       ?>
-      <div id="profile">
-        <!-- <ul>
-          <li> -->
+      </div>
+    </header>                   
+                                              <!-- dropdown  -->
+      <div class="profile" >
+        <ul type="none">
+          <li>
       <i class="btn btn-dark ">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class=" bi bi-person" viewBox="0 0 16 16">
         <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
@@ -94,18 +98,11 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
       <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
     </svg>
   </i>
-  <!-- </li></ul> -->
   <p id="profile_name"> <?php echo $_SESSION['email'] ?>
     </p>
-  </div>
-      </div>
-      </header>                   
-                                        <!-- dropdown  -->
-     <div class="right">
-     <div class="wrapper" >
-    <div class="navbar">
-      
-<div class="dropdown">
+ 
+
+<div id="dropdown">
     <ul type="none" >
 
     <li><a href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -122,18 +119,18 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
   <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
 </svg></i>                  Signout</a></li>
   </ul>
+    </li>
+    </ul>
 </div>
-    </div>  
-  </div>
-  </div>
+</div>
   
-  <!-- END NAVIGATION-->
+                               <!-- END NAVIGATION-->
   <br>
   <br>
   <br>
   <hr id="info_hr">
 
-  <!-- info -->
+                           <!-- info -->
   <section id="main">
     <img class="img1" src="https://source.unsplash.com/600x400/?computer,it,coding,programming" alt="image"
       id="main_img">
@@ -149,14 +146,14 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     </div>
   </section>
 
-  <!--end info-->
+                               <!--end info-->
 
 
   <br>
   <hr>
   <br>
 
-  <!-- about us-->
+                                <!-- about us-->
   <section>
     <img src="http://localhost/E-learning%20project/images/about_us.jpg" alt="error" width="550px" hight="600px" id="about_photo">
     <u>
@@ -195,14 +192,14 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     </div>
   </section>
 
-  <!--end about us-->
+                              <!--end about us-->
 
 
   <br>
   <hr>
   <br>
 
-  <!--Courses-->
+                            <!--Courses-->
 
   <div class="courses">
     <div id="diamond_logo">
@@ -212,7 +209,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     <h2 align="center" id="heading2">Popular courses</h2>
     <br>
     <div class="flex_container">
-      <!--web development-->
+                                    <!--web development-->
       <section id="webdevelopment">
         <div class="web" style="flex-basis: 300px;">
           <div id="htmlphoto">
@@ -225,7 +222,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
         </div>
       </section>
       <br>
-      <!--Python-->
+                                    <!--Python-->
       <section id="Python">
         <div class="py">
           <div id="py_photo">
@@ -239,7 +236,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
           </div>
       </section>
       <br>
-      <!--java-->
+                                      <!--java-->
       <section id="java">
         <div class="py">
           <div id="java_photo">
@@ -252,19 +249,19 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
           </div>
       </section>
       <br>
-      <!-- More courses button  -->
+                               <!-- More courses button  -->
     </div>
     <div id=more_courses>
       <a href="courses.php"><button > More courses </button></a>
     </div>
   </div>
-  <!--End Courses-->
+                                <!--End Courses-->
 
 
   <br>
   <hr>
   <br>
-  <!-- contact us -->
+                             <!-- contact us -->
   <h2 align="center" id="contact">Contact Us</h2>
   <div id="contact_info">
     <h2>Contact Sleeknote </h2><br>
@@ -287,10 +284,10 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
   <br>
 
 
-  <!-- end contact us  -->
+                                  <!-- end contact us  -->
   <br>
 
-  <!--footer-->
+                                  <!--footer-->
   <footer>
     <h4 align="center">A community that Helps You in learn and Grow.</h4>
     <h6 align="center">Terms And conditon's are applied</h6>
@@ -321,32 +318,15 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
       <a href="www.gmail.com/">Facebook</a>
     </div>
   </footer>
-  <!--footer-->
+                                       <!--footer-->
 
 
   </div>
 
 <script type="text/javascript">
 
-// function profiledrop() {
-//         (document.getElementById("dropdown_menu").classList.toggle("show");
-//       }
-
-//       window.onclick = function(event) {
-//   if (!event.target.matches('.profile_btn')) {
-//     var dropdowns = document.getElementsByClassName("dropdown_content");
-//     var i;
-//     for (i = 0; i < dropdowns.length; i++) {
-//       var openDropdown = dropdowns[i];
-//       if (openDropdown.classList.contains('show')) {
-//         openDropdown.classList.remove('show');
-//       }
-//     }
-//   }
-// } 
-
-document.querySelector("#profile ul li").addEventListener("click", function () {
-  this.classList.toggle("wrapper");
+document.querySelector(".profile ul li").addEventListener("click", function() {
+  this.classList.toggle("active");
 });
 
 </script>

@@ -48,18 +48,18 @@ button{
     border: none;
     background-color: #ffbf52;
     font-family: 'Montserrat',sans-serif;
-    border-radius: 10px;
+    border-radius: 5px;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: bold;
     font-size: small;
-
+    user-select: none;
     
 }
 button:hover{
     cursor: pointer;
     background-color: #ffbf52;
-    border-radius: 5px;
+    border-radius: 10px;
     border-color: #FFBF52;
     
 }
@@ -79,6 +79,7 @@ button:hover{
     border-bottom-right-radius: 15px;
     display: inline-block;
     padding: 30px;
+    user-select: none;
 }
 
 #main_logo{
@@ -140,10 +141,11 @@ button:hover{
 }
 
                                            /*  profile  */
-#profile{
+.profile{
 position: absolute;
-right: 80px;
-top:50px;
+right: 85px;
+top: 50px;
+user-select: none;
 }
 #profile_name{
 position: absolute;
@@ -154,71 +156,42 @@ font-size: 4mm;
 }
                                  /* profile dropdown   */
 
-/* *********************adjust dropdown style and position************ */
 
-.wrapper{ 
-    position: absolute;
-    top: 25%;
-    right: -60px;
-    transform: translate(-50%,-50%);
-    z-index: 10;
-    display:none;
-}
-  
-  .wrapper .navbar{
-      width: 150px;
-    background: #f1a31c;
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 25px;
-    border-radius: 5px;
-  }
-   
-  .wrapper .navbar ul li a{
-      color: #000200;
-   }
-                  
-   .wrapper .navbar 
-   .wrapper .navbar .profile ul li a{
-       display: flex;
-    align-items: center;
-    height: 120px;
-}
-.wrapper .navbar ,
-.wrapper .navbar {
-    /* margin: 0px 5px 180px 0px; */
-}
-.wrapper .navbar .profile a{
+       .profile ul li a{
+              display: flex;
+           align-items: center;
+           height: 45px;
+       }
+.profile a{
     text-align: right;
 }
-.wrapper .navbar {
-    font-size: 10px;
-}
-.wrapper .navbar .profile ul li{
+
+.profile ul li{
     position: relative;
   }
-  .wrapper .navbar .profile ul li .dropdown{
+  .profile:hover{
+     cursor: pointer;
+  }
+  #dropdown{
       position: absolute;
-    /* top: 65px; */
-    /* right: 0; */
+      top: 35px;
+      right: -50px;
     background: #ffbf52;
-    padding: 10px 25px;
+    padding: 2px 30px;
     border-radius: 5px;
     display: none;
 }
-.wrapper .navbar .profile ul li .dropdown .fas{
-    /* margin-right: 10px; */
-}
-.wrapper .navbar .profile ul li .dropdown:before{
+
+#dropdown:before{
     content: "";
     position: absolute;
-    /* top: -20px; */
-    /* left: 50%; */
+    top: -20px;
+    left: 50%;
     transform: translateX(-50%);
     border: 10px solid;
-    border-color: transparent transparent #fff transparent;
+    border-color: transparent transparent rgb(255, 191, 82) transparent;
 }
-  .wrapper .navbar .profile ul li.active .dropdown{
+.profile ul li.active #dropdown{
     display: block;
   }
   
