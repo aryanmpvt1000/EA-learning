@@ -158,9 +158,13 @@ font-size: 4mm;
 
 
        .profile ul li a{
-              display: flex;
+              display: inline-flex;
            align-items: center;
            height: 45px;
+       }
+       #dropdown ul li:hover{
+           background-color: rgb(236, 170, 56);
+           border-radius: 5px;
        }
 .profile a{
     text-align: right;
@@ -177,11 +181,16 @@ font-size: 4mm;
       top: 35px;
       right: -50px;
     background: #ffbf52;
-    padding: 2px 30px;
     border-radius: 5px;
     display: none;
+    align-items: left;
 }
-
+#dropdown ul li{
+    padding: 2px 30px;
+}
+#dropdown ul li a svg{
+ margin-right: 10px;
+}
 #dropdown:before{
     content: "";
     position: absolute;
