@@ -99,7 +99,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
        echo' <a href="signup.php" class="btn btn-primary my-2">Register Now</a>';
       }
       else
-      echo'<a href="about_us.php" class="btn btn-primary my-2">About Us</a>';
+      echo'<a href="about_us.php" class="btn btn-primary my-2">About Us</a>'; 
 
       ?>
                 
