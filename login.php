@@ -3,6 +3,8 @@
           $showError= false;
           //connect database 
         if ($_SERVER['REQUEST_METHOD']=='POST'){
+          $email=$_POST['Email'];
+         $password=$_POST['Password'];
           include 'php/db_connect.php';
          $email=$_POST['Email'];
          $password=$_POST['Password'];

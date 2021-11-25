@@ -17,7 +17,9 @@
   .container{
       width: 100%;
   }
-
+  ol ol, ol ul, ul ol, ul ul{
+     padding: 0%;
+ }
 
                                                   /* header  */
 
@@ -45,7 +47,7 @@
         top: 9px;
           position: relative;
           right: 16px;
-    
+        user-select: none;
     } 
     .element li {
         display: inline;
@@ -98,6 +100,98 @@
         background-color:#f1a31c ;
         color: black;
     }
+    #search {
+        width: 130px;
+        transition: width 0.4s ease-in-out;
+        position: absolute;
+        right: 210px;
+        top: 34px;
+        height: 30px;
+        border: black solid 1px;
+      }
+      
+      /* When the input field gets focus, change its width to 100% */
+      #search:focus {
+        width: 230px;
+      }
+      #search,input::-webkit-input-placeholder{
+          font-size: 4mm;
+      }
+    
+                                               /*  profile  */
+.profile{
+    position: absolute;
+    right: 85px;
+    top: 50px;
+    user-select: none;
+    }
+    #profile_name{
+    position: absolute;
+    right: -18px;
+    top: -30px;
+    font-size: 4mm;
+    
+    }
+                                     /* profile dropdown   */
+    
+    
+           .profile ul li a{
+                  display: inline-flex;
+               align-items: center;
+               height: 45px;
+               
+           }
+           #dropdown ul li:hover{
+               background-color: rgb(236, 170, 56);
+               border-radius: 5px;
+           }
+    .profile a{
+        text-align: right;
+    }
+    
+    .profile ul li{
+        position: relative;
+      }
+      .profile:hover{
+         cursor: pointer;
+      }
+      #dropdown{
+          position: absolute;
+          top: 35px;
+          right: -50px;
+        background: #ffbf52;
+        border-radius: 5px;
+        display: none;
+        align-items: left;
+    }
+    #dropdown ul li{
+        padding: 2px 30px;
+        
+    }
+    #dropdown ul li a{
+        text-decoration: none;
+        color:#6c276c;
+    }
+    #dropdown ul li a svg{
+     margin-right: 10px;
+    }
+    #dropdown:before{
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 10px solid;
+        border-color: transparent transparent rgb(255, 191, 82) transparent;
+    }
+    .profile ul li.active #dropdown{
+        display: block;
+      }
+      
+
+      .top{
+        display: contents;
+      }
 
                             /* course content  */
     #courses_content{
@@ -105,7 +199,8 @@
         display: inline-block;
         margin: 100px 255px;
         width: 60%;
-        
+        /* top: 215px; */
+        right: 00vh;
     }
     #courses_text{
         font-size:5mm;
@@ -114,9 +209,6 @@
         width: 100%;
         font-weight: 900;
         text-shadow: #ebe3e0 ;
-    }
-    .courses_img{
-        opacity: 0.9;
     }
 
 
@@ -134,16 +226,14 @@
     }
                                             /* footer  */
 #footer_text{
-position: relative;
+position: absolute;
 left: 405px;
+top: 347vh;
 }
 .social{
     position: absolute;
     right: 450px;
-}
-.container{
-    position: absolute;
-    left: 10px;
+    top: 360vh;
 }
 
 

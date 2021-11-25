@@ -1,3 +1,16 @@
+<?php
+if ($_SERVER['REQUEST_METHOD']=='POST'){
+  $name=$_POST['name'];
+  $email=$_POST['email'];
+  $message=$_POST['message'];
+  include "php/db_connect.php";
+$sql= "INSERT INTO `contact_us` (`name`, `email`, `message`) VALUES ('$name', '$email','$message');";
+$result= mysqli_query($conn,$sql);
+}
+else{
+  echo '';
+ }
+?>
 
 <?php
 session_start();
@@ -9,6 +22,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     exit;
 }
 ?>
+
 
 
 <!DOCTYPE html>
@@ -57,6 +71,10 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 
 
   </script>
+   
+
+    </div>
+
 
 </head>
 
@@ -82,7 +100,13 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
       if ($reg_button=false)
       echo'
       <a href="signup.php"> <button id="register">Register now</button></a>
-      <a href="login.php"> <button id="login">login</button> </a>'
+      <a href="login.php"> <button id="login">login</button> </a>';
+      else{
+        echo'
+        <input type="text" id="search" name="search" placeholder="What do you want to learn?"> 
+         ';
+
+      }
       ?>
       </div>
     </header>                   
@@ -104,7 +128,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 
 <div id="dropdown">
     <ul type="none" >
-<li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+<li><a href="profile.php"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
   <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
       </svg>               Profile</a></li>
      
@@ -112,7 +136,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
   <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z"/>
 </svg>                     Settings</a></li>
       
-      <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+      <li><a href="php/logout.php"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
   <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
 </svg></i>                  Signout</a></li>
@@ -140,7 +164,14 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
         be
         eligible to receive a shareable electronic Course Certificate for a small fee.</p>
       <br>
-      <a href="signup.php"><button>Learn Now</button></a>
+      <?php
+      if ($reg_button=false){
+       echo' <a href="signup.php"><button class="learn_now">Learn Now</button></a>';
+      }
+      else
+      echo'<a href="courses.php"><button class="learn_now">Learn Now</button></a>';
+
+      ?>
     </div>
   </section>
 
@@ -154,9 +185,8 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
                                 <!-- about us-->
   <section>
     <img src="http://localhost/E-learning%20project/images/about_us.jpg" alt="error" width="550px" hight="600px" id="about_photo">
-    <u>
       <h2 align="center" id="heading1">About us</h2>
-    </u><br>
+    <br>
     <div id="we_belive">
       <div id="diamond_logo">
         <img src="http://localhost/E-learning%20project/images/yellow-diamond-shape.svg" alt="" width="24" height="24">
@@ -269,13 +299,13 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
   <br>
   <div class="contact_us">
     <br>
-    <form action="contact_submit.php" id="contact_form" name="myForm" onsubmit="return(validate())">
+    <form action="main.php" id="contact_form" name="myForm" onsubmit="return(validate())" method="post">
       <label>Name</label>
       <input type="text" id="name" name="name"><br>
       <label>Email</label>
       <input type="email" id="email" name="email"><br>
       <label>Message</label><br>
-      <textarea name="Message" rows="3" cols="20" style="resize: none" ;> </textarea><br><br>
+      <textarea name="message" rows="3" cols="20" style="resize: none" ;> </textarea><br><br>
       <input type="submit" id="contact_button" name="button" value="Submit">
     </form>
   </div>
@@ -322,10 +352,13 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
   </div>
 
 <script type="text/javascript">
-
+                          
 document.querySelector(".profile ul li").addEventListener("click", function() {
   this.classList.toggle("active");
 });
+
+
+
 
 </script>
 

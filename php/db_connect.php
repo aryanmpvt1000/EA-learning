@@ -1,7 +1,6 @@
 <?php
         if ($_SERVER['REQUEST_METHOD']=='POST'){
-         $email=$_POST['Email'];
-         $password=$_POST['Password'];
+         
 //connect database 
 
 $servername = "localhost";

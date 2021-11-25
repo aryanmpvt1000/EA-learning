@@ -48,7 +48,7 @@
             /* padding: 3px ; */
             width: 60%;
             margin: auto;
-
+            user-select: none;
         } 
 .element li {
     display: inline;
@@ -81,7 +81,96 @@
     background-color:#f1a31c;
     color: black;
 }
-/*end  navigation bar */
+#search {
+    width: 130px;
+    transition: width 0.4s ease-in-out;
+    position: absolute;
+    right: 210px;
+    top: 34px;
+    height: 30px;
+    border: black solid 1px;
+  }
+  
+  /* When the input field gets focus, change its width to 100% */
+  #search:focus {
+    width: 230px;
+  }
+  #search,input::-webkit-input-placeholder{
+      font-size: 4mm;
+  }
+
+                                  /*  profile  */
+  .profile{
+    position: absolute;
+    right: 85px;
+    top: 50px;
+    user-select: none;
+    }
+    #profile_name{
+    position: absolute;
+    right: -18px;
+    top: -30px;
+    font-size: 4mm;
+    
+    }
+                                     /* profile dropdown   */
+    
+    
+           .profile ul li a{
+                  display: inline-flex;
+               align-items: center;
+               height: 45px;
+               
+           }
+           #dropdown ul li:hover{
+               background-color: rgb(236, 170, 56);
+               border-radius: 5px;
+           }
+    .profile a{
+        text-align: right;
+    }
+    
+    .profile ul li{
+        position: relative;
+      }
+      .profile:hover{
+         cursor: pointer;
+      }
+      #dropdown{
+          position: absolute;
+          top: 35px;
+          right: -50px;
+        background: #ffbf52;
+        border-radius: 5px;
+        display: none;
+        align-items: left;
+    }
+    #dropdown ul li{
+        padding: 2px 30px;
+        
+    }
+    #dropdown ul li a{
+        text-decoration: none;
+        color:#6c276c;
+    }
+    #dropdown ul li a svg{
+     margin-right: 10px;
+    }
+    #dropdown:before{
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 10px solid;
+        border-color: transparent transparent rgb(255, 191, 82) transparent;
+    }
+    .profile ul li.active #dropdown{
+        display: block;
+      }
+      
+    
+    /*end  navigation bar */
 
                                                   /* heading  */
 

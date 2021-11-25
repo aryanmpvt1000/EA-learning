@@ -33,9 +33,8 @@ else{
 <html lang="en">
 <head>
    <title>Sign Up</title>
-   <link rel="stylesheet" href="http://localhost/E-learning%20project/css/signup.css">
+   <link rel="stylesheet" href="http://localhost/E-learning%20project/css/signup.css?version=1">
    <link rel="icon" href="favicon.ico" type="image/ico">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
       
     <!-- javascript -->
 

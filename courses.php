@@ -1,7 +1,19 @@
+<?php
+session_start();
+$reg_button = true;
+
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+  $reg_button=false; 
+  header("location: login.php");
+    exit;
+}
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="http://localhost/E-learning%20project/css/courses.css">
+    <link rel="stylesheet" href="http://localhost/E-learning%20project/css/courses.css?version7.1">
     <link rel="icon" href="favicon.ico">
     <!-- Bootstrap core CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -23,10 +35,55 @@
          <li><a href="main.php#contact">Contact</a></li>
        </ul>
      </nav>
-     <a href="signup.php"> <button id="register">Register now</button></a>
-     <a href="login.php"> <button id="login">login</button> </a>
+     <?php
+      if ($reg_button=false)
+      echo'
+      <a href="signup.php"> <button id="register">Register now</button></a>';
+      else{
+        echo'
+        <input type="text" id="search" name="search" placeholder="What do you want to learn?"> 
+         ';
+
+      }
+      ?>
    </div>
  </header>
+                                       
+                                      <!-- dropdown  -->
+        <div class="profile" >
+        <ul type="none">
+          <li>
+      <i class="btn btn ">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class=" bi bi-person" viewBox="0 0 16 16">
+        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class=" bi bi-chevron-down" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+    </svg>
+  </i>
+  <p id="profile_name"> <?php echo $_SESSION['email'] ?>
+    </p>
+ 
+
+<div id="dropdown">
+    <ul type="none" >
+<li><a href="profile.php"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+      </svg>               Profile</a></li>
+     
+    <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z"/>
+</svg>                     Settings</a></li>
+      
+      <li><a href="php/logout.php"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+  <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+</svg></i>                  Signout</a></li>
+  </ul>
+    </li>
+    </ul>
+</div>
+</div>
       
       <p class="top"></p>
                                    <!-- courses content  -->
@@ -37,8 +94,15 @@
             <div id=courses_text>
               <h1 class="fw-light">All available courses</h1>
               <p >Discover a range of free learning content designed to help grow your business or jumpstart your career. You can learn by selecting individual modules, or dive right in and take an entire course end-to-end.</p>
-              <p>
-                <a href="signup.php" class="btn btn-primary my-2">Register Now</a>
+              <p><?php
+      if ($reg_button=false){
+       echo' <a href="signup.php" class="btn btn-primary my-2">Register Now</a>';
+      }
+      else
+      echo'<a href="about_us.php" class="btn btn-primary my-2">About Us</a>';
+
+      ?>
+                
               </p>
             </div>
           </div>
@@ -186,7 +250,8 @@
   <!-- </div> -->
 
                                           <!--footer-->
-              <footer >
+              
+                                          <footer >
     <h4 id=footer_text>A community that Helps You in learn and Grow.</h4>
     <h6 align="center">Terms And conditon's are applied</h6>
     <div class="social">
@@ -217,6 +282,14 @@
     </div>
   </footer>
   <!--footer-->
+
+
+  <script type="text/javascript">
+                          
+  document.querySelector(".profile ul li").addEventListener("click", function() {
+    this.classList.toggle("active");
+  });
+  </script>
 
   </body>
 
